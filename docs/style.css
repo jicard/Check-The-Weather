@@ -1,0 +1,67 @@
+body {
+
+}
+
+header {
+
+}
+
+#pagetitle {
+    text-align: center;
+}
+
+#maincontainer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+aside {
+    width: 33.333%;
+    border: 5px solid red;
+}
+
+#searchcity {
+
+}
+
+#cityinput {
+
+}
+
+#submitbtn {
+
+}
+
+main {
+    width: 66.667%;
+}
+
+#currentday {
+    border: 5px solid yellow;
+}
+
+#currentdaytitle {
+    text-align: center;
+}
+
+#forecast {
+    border: 5px solid green;
+}
+
+#fivedaytitle {
+    text-align: center;
+}
+
+#days {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-evenly;
+}
+
+.fiveday {
+    text-align: center;
+    margin: 10px;
+    border: 3px solid blue;
+}
