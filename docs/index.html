@@ -15,37 +15,70 @@
 
 <body>
     <header>
-        <div>
+        <div class="center">
             <p id="pagetitle">Weather Forecast</p>
+            <p id="todaysdate"></p>
         </div>    
     </header>
-    <div id="maincontainer">
-    <aside>
+    <div class="row">
+    <aside class="col-3">
         <p id="searchcity">Search for a city:</p>
         <input type="text" id="cityinput" name="cityinput" value="">
         <input type="submit" id="submitbtn" value="Submit">
     </aside>
-    <main>
-        <div id="currentday">
-            <p id="currentdaytitle">Current Weather Data: City Name, 1/1/2022</p>
+    <main class="col-9">
+        <div class="center" id="currentday">
+            <p id="currentdaytitle">
+                <p>CurrentWeatherData:</p> 
+                <p>CityName</p>
+                <p>WeatherIcon</p>
+                <p>Temp</p>
+                <p>Humidity</p>
+                <p>WindSpeed</p>
+            </p>
         </div>
         <div id="forecast">
             <p id="fivedaytitle">5-Day Forecast:</p>
             <div id="days">
-            <div class="fiveday">1/2/2022</div>
-            <div class="fiveday">1/3/2022</div>
-            <div class="fiveday">1/4/2022</div>
-            <div class="fiveday">1/5/2022</div>
-            <div class="fiveday">1/6/2022</div>
+            <div class="fiveday">
+                <p class="forecastdate" id="todayplusone">Date</p>
+                <p>Weathericon</p>
+                <p>Temp</p>
+                <p>Humidity</p>
+                <p>Windspeed</p>
+            </div>
+            <div class="fiveday">
+                <p class="forecastdate" id="todayplustwo">Date</p>
+                <p>Weathericon</p>
+                <p>Temp</p>
+                <p>Humidity</p>
+                <p>Windspeed</p>
+            </div>
+            <div class="fiveday">
+                <p class="forecastdate" id="todayplusthree">Date</p>
+                <p>Weathericon</p>
+                <p>Temp</p>
+                <p>Humidity</p>
+                <p>Windspeed</p>
+            </div>
+            <div class="fiveday">
+                <p class="forecastdate" id="todayplusfour">Date</p>
+                <p>Weathericon</p>
+                <p>Temp</p>
+                <p>Humidity</p>
+                <p>Windspeed</p>
+            </div>
+            <div class="fiveday">
+                <p class="forecastdate" id="todayplusfive">Date</p>
+                <p>Weathericon</p>
+                <p>Temp</p>
+                <p>Humidity</p>
+                <p>Windspeed</p>
+            </div>
             </div>
         </div>
     </main>
     </div>
-    
-
-
-
-
 
 
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>

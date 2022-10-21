@@ -3,22 +3,22 @@ body {
 }
 
 header {
-
+    
 }
 
 #pagetitle {
     text-align: center;
 }
-
+/*
 #maincontainer {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
 }
-
+*/
 aside {
-    width: 33.333%;
     border: 5px solid red;
+
 }
 
 #searchcity {
@@ -34,7 +34,7 @@ aside {
 }
 
 main {
-    width: 66.667%;
+    border: 5px solid blue;
 }
 
 #currentday {
@@ -64,4 +64,10 @@ main {
     text-align: center;
     margin: 10px;
     border: 3px solid blue;
+}
+
+.center {
+    text-align: center;
+    justify-content: center;
+    align-items: center;
 }
