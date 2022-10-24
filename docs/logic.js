@@ -25,20 +25,18 @@ async function getWeather() {
     https: var getCoordinates = "https://api.openweathermap.org/geo/1.0/direct?q="+searchInput+"&appid=f35f15ca2adc937d3e6afe2f22b4ba44&units=metric";
     //Handle the response coordinates from API
     var coordinateData = await fetch(getCoordinates);
-    var data = await coordinateData.json();
-    console.log(data);
-    var coordinates = data[0];
+    var data1 = await coordinateData.json();
+    console.log(data1);
+    var coordinates = data1[0];
     console.log(coordinates);
     var {lat, lon} = coordinates;
     console.log(lat, lon);
     https: var weatherDataUrl = "https://api.openweathermap.org/data/2.5/weather?lat="+lat+"&lon="+lon+"&appid=f35f15ca2adc937d3e6afe2f22b4ba44";
-    var weatherDataResponse = await fetch(weatherDataUrl);
-    var weatherData = weatherDataResponse;
-    console.log(weatherData);
-    //var weatherIcon = weather.icon;
-    //console.log(weatherIcon);
+    var weatherDataResponse = await fetch(weatherDataUrl)
+        .then((response) => response.json())
+        .then((data) => console.log(data))
+        
 }
-
 //Submit button onclick events
 var searchButton = document.querySelector("#submitbtn");
 searchButton.addEventListener("click", getWeather);
