@@ -75,3 +75,35 @@ main {
     justify-content: center;
     align-items: center;
 }
+
+@media screen and (max-width: 992px) {
+    .col-3 {
+        width: 100%;
+    }
+
+    aside {
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+    }
+
+    main {
+        text-align: center;
+        align-items: center;
+        justify-content: center; 
+    }
+    
+    .col-9 {
+        width: 100%;
+    }
+
+    #days {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    
+}
