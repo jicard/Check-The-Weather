@@ -15,101 +15,135 @@ function fivedaydates() {
 
 async function getWeather() {
     console.log("The click worked");
+    var images = document.getElementsByTagName("img");
+    //var i;
+    for(i = 0; i < images.length; i++) {
+        images[i].classList.add("hide");
+    }
     var apikey = "f35f15ca2adc937d3e6afe2f22b4ba44";
     var searchInput = document.querySelector("#cityinput").value.trim();
-    console.log(searchInput);
 //Coordinates
     https: var getCoordinates = "https://api.openweathermap.org/geo/1.0/direct?q="+searchInput+"&appid=f35f15ca2adc937d3e6afe2f22b4ba44&units=metric";
     var coordinateData = await fetch(getCoordinates);
     var data1 = await coordinateData.json();
-    console.log(data1);
     var coordinates = data1[0];
-    console.log(coordinates);
     var {lat, lon} = coordinates;
-    console.log(lat, lon);
+    var {name, state} = coordinates;
 //Current weather
     https: var weatherDataUrl = "https://api.openweathermap.org/data/2.5/weather?lat="+lat+"&lon="+lon+"&appid=f35f15ca2adc937d3e6afe2f22b4ba44&units=imperial";
     var response = await fetch(weatherDataUrl)
     var result = await response.json()
-    console.log(result);
     var resultarray = Object.values(result);
-    console.log(resultarray);
     var cityname = resultarray[11];
-    console.log(cityname);
-    console.log(result.weather[0].icon);
+    var icon = result.weather[0].icon;
     var {temp} = resultarray[3];
-    console.log(temp);
     var {humidity} = resultarray[3];
-    console.log(humidity);
     var {speed} = resultarray[5];
-    console.log(speed);
+    document.getElementById("currentcityname").textContent = name + ", " + state;
+    document.getElementById("currenttemp").textContent = temp + "°F";
+    document.getElementById("currenthumid").textContent = humidity + "% Humidity";
+    document.getElementById("currentwind").textContent = speed + "mph Winds";
+    var img = document.createElement("img");
+    img.src="http://openweathermap.org/img/wn/"+icon+"@2x.png"
+    document.getElementById("currentcityname").appendChild(img);
 //Forecast weather
     https: var forecastUrl = "https://api.openweathermap.org/data/2.5/forecast?lat="+lat+"&lon="+lon+"&appid=f35f15ca2adc937d3e6afe2f22b4ba44&units=imperial&cnt=5";
     var response = await fetch(forecastUrl)
     var result = await response.json()
-    console.log(result);
     var resultarray = Object.values(result);
-    console.log(resultarray);
     var forecast = resultarray[3];
-    console.log(forecast);
 //One day out
     var oneday = forecast[0];
-    console.log("one day out below");
-    console.log(oneday.weather[0].icon);
     var {temp} = oneday.main;
-    console.log(temp);
     var {humidity} = oneday.main;
-    console.log(humidity);
     var {speed} = oneday.wind;
-    console.log(speed);
+    var img = document.createElement("img");
+    img.src="http://openweathermap.org/img/wn/"+icon+"@2x.png"
+    document.getElementById("todayplusone").appendChild(img);
+    document.getElementById("onetemp").textContent = temp + "°F";
+    document.getElementById("onehumid").textContent = humidity + "% Humidity";
+    document.getElementById("onewind").textContent = speed + "mph Winds";
 //Two days out
     var twodays = forecast[1];
-    console.log("two days out below");
-    console.log(twodays.weather[0].icon);
+    var icon = twodays.weather[0].icon;
     var {temp} = twodays.main;
-    console.log(temp);
     var {humidity} = twodays.main;
-    console.log(humidity);
     var {speed} = twodays.wind;
-    console.log(speed);
+    var img = document.createElement("img");
+    img.src="http://openweathermap.org/img/wn/"+icon+"@2x.png"
+    document.getElementById("todayplustwo").appendChild(img);
+    document.getElementById("twotemp").textContent = temp + "°F";
+    document.getElementById("twohumid").textContent = humidity + "% Humidity";
+    document.getElementById("twowind").textContent = speed + "mph Winds";
 //Three days out
     var threedays = forecast[2];
-    console.log("three days out below");
-    console.log(threedays.weather[0].icon);
     var {temp} = threedays.main;
-    console.log(temp);
     var {humidity} = threedays.main;
-    console.log(humidity);
     var {speed} = threedays.wind;
-    console.log(speed);
+    var img = document.createElement("img");
+    img.src="http://openweathermap.org/img/wn/"+icon+"@2x.png"
+    document.getElementById("todayplusthree").appendChild(img);
+    document.getElementById("threetemp").textContent = temp + "°F";
+    document.getElementById("threehumid").textContent = humidity + "% Humidity";
+    document.getElementById("threewind").textContent = speed + "mph Winds";
 //Four days out 
     var fourdays = forecast[3];
-    console.log("four days out below");
-    console.log(fourdays.weather[0].icon);
     var {temp} = fourdays.main;
-    console.log(temp);
     var {humidity} = fourdays.main;
-    console.log(humidity);
     var {speed} = fourdays.wind;
-    console.log(speed);
+    var img = document.createElement("img");
+    img.src="http://openweathermap.org/img/wn/"+icon+"@2x.png"
+    document.getElementById("todayplusfour").appendChild(img);
+    document.getElementById("fourtemp").textContent = temp + "°F";
+    document.getElementById("fourhumid").textContent = humidity + "% Humidity";
+    document.getElementById("fourwind").textContent = speed + "mph Winds";
 //Five days out
     var fivedays = forecast[4];
-    console.log("five days out below");
-    console.log(fivedays.weather[0].icon);
     var {temp} = fivedays.main;
-    console.log(temp);
     var {humidity} = fivedays.main;
-    console.log(humidity);
     var {speed} = fivedays.wind;
-    console.log(speed);
+    var img = document.createElement("img");
+    img.src="http://openweathermap.org/img/wn/"+icon+"@2x.png"
+    document.getElementById("todayplusfive").appendChild(img);
+    document.getElementById("fivetemp").textContent = temp + "°F";
+    document.getElementById("fivehumid").textContent = humidity + "% Humidity";
+    document.getElementById("fivewind").textContent = speed + "mph Winds";
+    document.getElementById("main").classList.remove("hide");
+    var savedSearches = JSON.parse(localStorage.getItem("savedSearches")) || [];
+    var searchedCity = name;
+    var searchedObject = {
+        name: searchedCity,
+        city: searchedCity
+    };
+    savedSearches.push(searchedObject);
+    localStorage.setItem("savedSearches", JSON.stringify(savedSearches));
+    var searches = JSON.parse(window.localStorage.getItem('savedSearches')) || [];
+    //if searches contains previous results, dont log them again
+    console.log(searches);
+    var optionsToDelete = document.querySelectorAll("option");
+    console.log(optionsToDelete);
+    for (i = 0; i < optionsToDelete.length; i++) {
+        optionsToDelete[i].parentNode.removeChild(optionsToDelete[i])
+    }
+    for (var i = 0; i < searches.length; i++) {
+        var option = document.createElement('option');
+        option.textContent = searches[i].name;
+        var div = document.getElementById('history');
+        div.appendChild(option);
+    }
+    var searchInput = document.querySelector("#cityinput");
+    searchInput.value = "";
 }
+
 
 //Submit button onclick events
 var searchButton = document.querySelector("#submitbtn");
 searchButton.addEventListener("click", getWeather);
+//searchButton.addEventListener("click", () => {getWeather(); showSearchHistory();});
 
 //Onload events
 window.onload = function onload() {
     todaysDate();
     fivedaydates();
+    //showSearchHistory();
 }

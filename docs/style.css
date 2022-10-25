@@ -1,5 +1,12 @@
 body {
-
+    background: linear-gradient(45deg, lightblue, coral) no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    color: black;
+    font-family: "Mukta", serif;
+    font-size: 26px;
 }
 
 header {
@@ -9,15 +16,8 @@ header {
 #pagetitle {
     text-align: center;
 }
-/*
-#maincontainer {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-}
-*/
+
 aside {
-    border: 5px solid red;
 
 }
 
@@ -29,16 +29,33 @@ aside {
 
 }
 
+datalist {
+    position: absolute;
+    background-color: white;
+    border: 1px solid blue;
+    border-radius: 0 0 5px 5px;
+    border-top: none;
+    font-family: sans-serif;
+    width: 350px;
+    padding: 5px;
+    max-height: 10rem;
+    overflow-y: auto;
+}
+
 #submitbtn {
 
 }
 
 main {
-    border: 5px solid blue;
+
+}
+
+.hide {
+    display: none;
 }
 
 #currentday {
-    border: 5px solid yellow;
+    
 }
 
 #currentdaytitle {
@@ -46,7 +63,7 @@ main {
 }
 
 #forecast {
-    border: 5px solid green;
+    
 }
 
 #fivedaytitle {
@@ -63,7 +80,7 @@ main {
 .fiveday {
     text-align: center;
     margin: 10px;
-    border: 3px solid blue;
+    
 }
 
 .center {
