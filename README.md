@@ -4,7 +4,7 @@
 
 https://jicard.github.io/Check-The-Weather/
 
-This is a weather application using HTML, CSS, JavaScript, jQuery, Bootstrap, moment.js, FontAwesome API, Google Fonts API, and OpenWeatherMap API. 
+This is a weather application built using HTML, CSS, JavaScript, jQuery, Bootstrap, moment.js, FontAwesome API, Google Fonts API, and OpenWeatherMap API. 
 
 Search for a city and you will be given the current weather depicted by an icon, along with the temperature, humidity, and wind speed. 
 
